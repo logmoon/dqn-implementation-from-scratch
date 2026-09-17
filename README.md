@@ -7,7 +7,7 @@ This was a little experiment I did over a year ago (from the time this repo is p
 
 ## Build
 
-Requires GCC and the usual X11/OpenGL/ALSA dev packages on Linux.
+Requires GCC and the usual X11/OpenGL/ALSA dev packages on Linux, also should work on Windows
 
 ```console
 cc -o nob nob.c -lm
