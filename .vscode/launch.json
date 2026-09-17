@@ -1,0 +1,74 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug log_frame.exe",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/log_frame.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build",
+            "windows": {
+                "miDebuggerPath": "gdb.exe"
+            },
+            "linux": {
+                "miDebuggerPath": "x86_64-w64-mingw32-gdb"
+            },
+            "osx": {
+                "miDebuggerPath": "x86_64-w64-mingw32-gdb"
+            }
+        },
+        {
+            "name": "Debug log_frame.exe (no build)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/log_frame.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "windows": {
+                "miDebuggerPath": "gdb.exe"
+            },
+            "linux": {
+                "miDebuggerPath": "x86_64-w64-mingw32-gdb"
+            },
+            "osx": {
+                "miDebuggerPath": "x86_64-w64-mingw32-gdb"
+            }
+        }
+    ]
+}

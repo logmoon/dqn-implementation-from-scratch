@@ -1,0 +1,18 @@
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+build/
+*.exe
+*.o
+*.old
+!sokol-shdc.exe
+
+# Build artifacts
+/nob
+lf.log
+pong_model.bin
+
+# Generated sources
+src/assets.h
+src/main_shader.h
+src/lighting_shader.h
