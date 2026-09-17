@@ -27,8 +27,7 @@ bool find_all_files_in_dir(const char* dir, files_in_dir_t* file_paths, files_in
         return false;
     }
     for (size_t i = 0; i < children.count; ++i) {
-        if (strcmp(children.items[i], ".") == 0) continue;
-        if (strcmp(children.items[i], "..") == 0) continue;
+        if (children.items[i][0] == '.') continue;
         char item_path[512];
         snprintf(item_path, sizeof(item_path), "%s/%s", dir, children.items[i]);
         Nob_File_Type type = nob_get_file_type(item_path);

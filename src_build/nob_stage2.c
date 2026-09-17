@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 
     if (strcmp(subcommand, "build") == 0) {
         Nob_Cmd cmd = {0};
-        generate_assets_config(SRC_FOLDER "assets.h");
+        if (!generate_assets_config(SRC_FOLDER "assets.h")) return 1;
         if (!compile_shaders(&cmd)) return 1;
         if (!build_sokol(&cmd)) return 1;
 #ifdef LF_HOTRELOAD
@@ -79,14 +79,14 @@ int main(int argc, char **argv)
     } else if (strcmp(subcommand, "build_plug") == 0) {
 #ifdef LF_HOTRELOAD
         Nob_Cmd cmd = {0};
-        generate_assets_config(SRC_FOLDER "assets.h");
+        if (!generate_assets_config(SRC_FOLDER "assets.h")) return 1;
         if (!compile_shaders(&cmd)) return 1;
         if (!build_libplug(&cmd)) return 1;
 #else
         nob_log(NOB_ERROR, "'build_plug' is only available when hotreloading is enabled");
 #endif // LF_HOTRELOAD
     } else if (strcmp(subcommand, "build_assets") == 0) {
-        generate_assets_config(SRC_FOLDER "assets.h");
+        if (!generate_assets_config(SRC_FOLDER "assets.h")) return 1;
     } else if (strcmp(subcommand, "dist") == 0) {
         if (!build_dist()) return 1;
     } else if (strcmp(subcommand, "help") == 0) {
